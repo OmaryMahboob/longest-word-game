@@ -1,0 +1,15 @@
+
+<% @random_letters.each do |letter| %>
+ <button><h1> <%= letter %></h1></button>
+<%end%>
+
+
+
+<div>
+<form action="/score" method="get">
+  <label for="query">Type the longest word you can make from these letters:</label>
+  <input type="hidden" name="letters" value="<%= @random_letters.join(",")%>" />
+  <input id="query" name="query" type="text" />
+  <input type="submit" value="Search"/>
+</form>
+</div>

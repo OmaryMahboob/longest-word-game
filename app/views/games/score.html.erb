@@ -1,0 +1,12 @@
+
+
+<% if @word.chars.all? { |c| @letters.include?(c) } && @response == true %>
+  <p>Good job <strong> <%= @word %></strong> is a valid English word.</p>
+
+<% elsif @word.chars.all? { |c| @letters.include?(c) } && @response == false %>
+  <p>Sorry but <strong> <%= @word %></strong> deos not seem to be a valid English word.</p>
+<% else %>
+  <p>Oops <strong> <%= @word %></strong> has more letters than specified here.</p>
+<% end %>
+
+<div><button><a href="/new"> Search again</a></button></div>
